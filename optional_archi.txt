@@ -1,0 +1,8 @@
+Pour la base de données, j'ai remplacé les valeurs NaN par None pour qu'ils puissent être reconnu en format json.
+La route @api.get('/') affiche la base de données complète
+La route @api.get('/verify') affiche un message si l'application est fonctionnelle
+la route @api.post('/generate_quiz/') permet de générer une série de questions en fonction du sujet, de la catégorie choisi et du nombre de question que l'on veux générer.
+Dans mon code si le nombre de question que l'on veux générer est supérieur aux nombres de réponses qu'on a filtré, on garde le maximum. (Exemple on veux 10 questions et le filtre nous trouvent 8 questions, on ressortira 8 questions.)
+Pour le nombre de quiz que l'on veux générer, on peux générer seulement 5, 10 ou 20 questions.
+J'ai créé deux utilisateurs pour tester avec l'encodage basic.
+La route @api.post('/create_question/') permet d'ajouter une nouvelle ligne dans la base de données en renseignant les différents champs. Il faut aussi renseigner les champs pour s'identifier car seule les utilisateurs sans la liste autorisée peuvent ajouter une nouvelle ligne

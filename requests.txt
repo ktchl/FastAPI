@@ -1,0 +1,29 @@
+curl -X 'GET' \
+  'http://127.0.0.1:8000/' \
+  -H 'accept: application/json'
+
+curl -X 'GET' \
+  'http://127.0.0.1:8000/verify' \
+  -H 'accept: application/json'
+
+
+
+
+curl -X POST "http://127.0.0.1:8000/generate_quiz/" -H "Authorization: basic YWRtaW46NGRtMU4=" -H "Content-Type: application/json" -d '{"test_type": "Automation", "categories": "Test de validation", "nbr_questions": 5}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/create_question/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "admin_username": "admin",
+  "admin_password": "4dm1N",
+  "question": "What is Machine Learning ?",
+  "subject": "Machine Learning",
+  "correct": "A",
+  "use": "Total Bootcamp",
+  "responseA": "IA",
+  "responseB": "Nourriture",
+  "responseC": "Sport",
+  "responseD": "Musique"
+}'
